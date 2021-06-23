@@ -1,4 +1,29 @@
 .destination__title {
-    font-size: 32px;
+    font-size: 42px;
     font-weight: 500;
+}
+.destination__cardWrap {
+    margin: 0 !important;
+}
+.card__title{
+    max-width: 50rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.card-text{
+    text-transform: none;
+}
+.card__btn{
+     width: 100%;
+     border: 2px solid #7552EB;
+     outline: none;
+     background-color: transparent;
+     text-transform: uppercase;
+
+     &:hover {
+         background: #7552EB;
+         border-color: #fff;
+         color: #fff;
+     }
 }

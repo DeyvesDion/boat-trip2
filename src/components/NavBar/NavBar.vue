@@ -25,12 +25,14 @@
                 >
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item mr-5">
-                            <router-link class="nav-link" to="/connection"
+                            <router-link class="nav-link" to="/connexion"
                                 >Se Connecter
                             </router-link>
                         </li>
                         <li class="nav-item mr-5">
-                            <router-link class="nav-link" to="/AddBoat"
+                            <router-link
+                                class="nav-link"
+                                to="/ajouter-un-bateau"
                                 >Ajouter un bateau
                             </router-link>
                         </li>
@@ -66,8 +68,8 @@
                             </ul>
                         </li> -->
                         <li class="nav-item mr-5">
-                            <router-link class="nav-link" to="/Help"
-                                >Aide
+                            <router-link class="nav-link" to="/Aide"
+                                >aide
                             </router-link>
                         </li>
                     </ul>

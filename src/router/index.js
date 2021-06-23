@@ -3,6 +3,7 @@ import Home from '../views/Home/Home.vue'
 import Connection from '../views/Connection/Connection.vue'
 import AddBoat from '../views/AddBoat/AddBoat.vue'
 import Help from '../views/Help/Help.vue'
+import FavoriteDestination from '../views/Destinations/FavoriteDestination/FavoriteDestination.vue'
 
 const routes = [
   {
@@ -11,19 +12,26 @@ const routes = [
     component: Home
   },
   {
-    path: '/connection',
-    name: 'Connection',
+    path: '/connexion',
+    name: 'connection',
     component: Connection
   },
   {
-    path: '/Addboat',
+    path: '/ajouter-un-bateau',
     name: 'AddBoat',
     component: AddBoat
   },
   {
-    path: '/help',
+    path: '/aide',
     name: 'Help',
     component: Help
+  },
+
+  {
+    //  fD: favorite destination name
+    path: '/destination-a-la-une/:fD',
+    name: 'FavoriteDestination',
+    component: FavoriteDestination
   },
 ]
 
