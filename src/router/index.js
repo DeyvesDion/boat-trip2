@@ -29,7 +29,7 @@ const routes = [
 
   {
     //  fD: favorite destination name
-    path: '/destination-a-la-une/:fD',
+    path: '/destination-favorite/:fD',
     name: 'FavoriteDestination',
     component: FavoriteDestination
   },

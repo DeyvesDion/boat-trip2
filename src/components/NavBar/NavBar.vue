@@ -69,7 +69,7 @@
                         </li> -->
                         <li class="nav-item mr-5">
                             <router-link class="nav-link" to="/Aide"
-                                >aide
+                                >Aide
                             </router-link>
                         </li>
                     </ul>
