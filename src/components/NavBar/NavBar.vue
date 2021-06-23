@@ -2,7 +2,12 @@
     <div>
         <nav class="navbar  navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <router-link to="/" class="logo__section">
+                    <img class="logo" src="@/assets/logo.png" alt="logo" /><span
+                        class="logo__title"
+                        >Boat Trip</span
+                    >
+                </router-link>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -19,16 +24,15 @@
                     id="navbarSupportedContent"
                 >
                     <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a
-                                class="nav-link active"
-                                aria-current="page"
-                                href="#"
-                                >Se Connecter</a
-                            >
+                        <li class="nav-item mr-5">
+                            <router-link class="nav-link" to="/connection"
+                                >Se Connecter
+                            </router-link>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Ajouter un bateau</a>
+                        <li class="nav-item mr-5">
+                            <router-link class="nav-link" to="/AddBoat"
+                                >Ajouter un bateau
+                            </router-link>
                         </li>
                         <!-- <li class="nav-item dropdown">
                             <a
@@ -61,8 +65,10 @@
                                 </li>
                             </ul>
                         </li> -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Aide</a>
+                        <li class="nav-item mr-5">
+                            <router-link class="nav-link" to="/Help"
+                                >Aide
+                            </router-link>
                         </li>
                     </ul>
                     <!-- <form class="d-flex">

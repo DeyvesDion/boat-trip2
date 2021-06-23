@@ -1,0 +1,36 @@
+label {
+    color: #000;
+    cursor: pointer;
+}
+
+.form-label1 {
+    margin-left: -40px;
+}
+
+.form-label2 {
+    margin-left: -65px;
+}
+
+.form-label3 {
+    margin-left: -200px;
+}
+
+.searchForm {
+    display: flex;
+    // width: 30%;
+    background: rgba(255, 255, 255, 0.555);
+    padding: 20px;
+    // height: 450px;
+}
+
+.btn__searchForm {
+    width: 100%;
+    border: 2px solid #7552EB;
+    outline: none;
+
+    &:hover {
+        background: #7552EB;
+        border-color: #fff;
+        color: #fff;
+    }
+}

@@ -6,3 +6,17 @@
     height: 78px;
     background-color: #fff !important;
 }
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+.logo__section{
+    display: flex;
+    text-decoration: none;
+}
+.logo__title {
+    color: #7552EB;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}

@@ -1,14 +1,20 @@
 <template>
     <div class="banner">
-        <h1 class="banner__title">Location de bateau entre particulier</h1>
+        <div class="inner__banner row container">
+            <h1 class="banner__title col-md-8">
+                Location de bateau entre particulier
+            </h1>
+            <SearchForm class="col-md-4" />
+        </div>
     </div>
 </template>
 
 <script>
+import SearchForm from "@/components/SearchForm/SearchForm.vue";
 export default {
     name: "Banner",
     components: {
-        // Banner,
+        SearchForm,
     },
 };
 </script>
