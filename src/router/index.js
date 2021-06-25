@@ -4,6 +4,7 @@ import Connection from '../views/Connection/Connection.vue'
 import AddBoat from '../views/AddBoat/AddBoat.vue'
 import Help from '../views/Help/Help.vue'
 import FavoriteDestination from '../views/Destinations/FavoriteDestination/FavoriteDestination.vue'
+import Dashboard from '../views/Dashboard/Dashboard.vue'
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     path: '/aide',
     name: 'Help',
     component: Help
+  },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: Dashboard
   },
 
   {

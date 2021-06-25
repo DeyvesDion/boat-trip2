@@ -1,10 +1,8 @@
 <template>
     <div class="connection">
-        <div class="row connection__header container-fluid mt-5">
+        <div class="row connection__header container-fluid">
             <div class="info__card col-md-6">
-                <h1>
-                    info sur boat trip
-                </h1>
+                <BoatTripInfo />
             </div>
             <div class="connection__form col-md-6">
                 <SignUp />
@@ -15,10 +13,12 @@
 
 <script>
 import SignUp from "@/components/LoginForm/SignUp.vue";
+import BoatTripInfo from "@/components/BoatTripInfo/BoatTripInfo.vue";
 export default {
     name: "Connetion",
     components: {
         SignUp,
+        BoatTripInfo,
     },
 };
 </script>

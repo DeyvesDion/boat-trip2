@@ -1,6 +1,6 @@
 <template>
     <div class="container" id="logreg-forms">
-        <form class="form-signin" @submit.prevent="SingUp">
+        <form @submit.prevent="authenticate" class="form-signin">
             <h1 class="form__title" v-if="mode == 'login'">Connexion</h1>
             <h1 class="form__title" v-else>Inscription</h1>
             <p class="card__subtitle" v-if="mode == 'login'">
@@ -22,17 +22,18 @@
                     id="inputName"
                     class="form-control mb-2"
                     placeholder="Nom"
-                    required
                     autofocus
                     v-model="name"
+                    required
                 />
+
                 <input
                     type="text"
                     id="inputName"
                     class="form-control mb-2"
                     placeholder="Prénom"
-                    required
                     v-model="lastName"
+                    required
                 />
             </div>
 
@@ -41,52 +42,154 @@
                 id="inputEmail"
                 class="form-control mb-2"
                 placeholder="Adresse mail "
-                required
                 v-model="email"
+                required
             />
             <input
                 type="password"
                 id="inputPassword"
                 class="form-control mb-2"
                 placeholder="Mot de passe"
-                required
                 v-model="password"
+                required
             />
+            <!-- <div v-if="mode == 'create'">
+                <input
+                    v-if="swichCreateAccount"
+                    type="password"
+                    id="confirmPassword"
+                    class="form-control mb-2"
+                    placeholder="Confirmer mot de passe"
+                    v-model="confirmPassword"
+                    required
+                />
+            </div> -->
 
             <button class="btn btn__signUpForm" type="submit">
-                <i class="fas fa-sign-in-alt"></i> Se connecter
+                {{ mode == "login" ? "Se connecter" : "Créer un compte" }}
             </button>
+            <div v-if="error" class="error">{{ error.message }}</div>
         </form>
+        <p>{{ name }}</p>
+        <p>{{ lastName }}</p>
+        <p>{{ email }}</p>
+        <p>{{ password }}</p>
+        <!-- <p>{{ confirmPassword }}</p> -->
     </div>
 </template>
 
 <script>
+import firebase from "firebase";
+require("firebase/auth");
 export default {
     name: "SignUp",
     data() {
         return {
-            name: "",
-            lastName: "",
-            email: "",
-            password: "",
+            user: {
+                name: "",
+                lastName: "",
+                email: "",
+                password: "",
+                // confirmPassword: "",
+            },
             mode: "login",
             swichCreateAccount: true,
-            lastNameField: true,
+            error: "Ce champ et requis",
         };
     },
     methods: {
-        SingUp() {
-            this.email = "";
-            this.password = "";
-        },
-        switchToCreateAccount: function() {
+        switchToCreateAccount() {
             this.mode = "create";
+            // confirmPassWord = true;
         },
-        switchToLogin: function() {
+        switchToLogin() {
             this.mode = "login";
         },
+        authenticate() {
+            if (this.mode == "login") {
+                firebase
+                    .auth()
+                    .signInWithEmailAndPassword(
+                        this.user.email,
+                        this.user.password
+                    )
+                    .then(() => {
+                        this.$router.push({
+                            name: "Dashboard",
+                            // params: { dB: dashboard },
+                        });
+                        console.log(this.user);
+                    })
+
+                    .catch((error) => {
+                        console.log(error.message);
+                    });
+                this.user.email = "";
+                this.user.password = "";
+            } else {
+                firebase
+                    .auth()
+                    .createUserWithEmailAndPassword(
+                        this.user.email,
+                        this.user.password
+                    )
+                    .then((res) => {
+                        res.user
+                            .updateProfile({
+                                displayName: this.user.name,
+                            })
+
+                            .then(() => {
+                                this.$router.push({
+                                    name: "Dashboard",
+                                    // params: { dB: dashboard },
+                                });
+                            });
+                        console.log(this.user);
+                    })
+                    .catch((error) => {
+                        console.log(error.message);
+                    });
+                this.user.email = "";
+                this.user.password = "";
+            }
+
+            // try {
+            //     const user = firebase
+            //         .auth()
+            //         .createUserWithEmailAndPassword(
+            //             this.user.name,
+            //             this.user.lastName,
+            //             this.user.email,
+            //             this.user.password
+            //         );
+            //     console.log(user);
+            //     this.$router.push({
+            //         name: "Dashboard",
+            //         // params: { fD: destinationName },
+            //     });
+            // } catch (err) {
+            //     console.log(err);
+            //     this.user.name = "";
+            //     this.user.lastName = "";
+            //     this.user.email = "";
+            //     this.user.password = "";
+            //     // this.confirmPassword = "";
+            // }
+        },
+
+        // this.name = "";
+        // this.lastName = "";
+        // this.email = "";
+        // this.password = "";
+        // this.confirmPassword = "";
     },
 };
+// computed: {
+//     users() {
+//         return this.$store.getters.currentUser;
+//     },
+// },
 </script>
 
 <style src="./SignUp.scss" lang="scss" scoped></style>

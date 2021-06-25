@@ -2,6 +2,7 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+    user: null,
     boatsType: [
       // { value: null, text: "Type de bateau" },
       { value: "Voilier", text: "Voilier" },
@@ -59,9 +60,20 @@ export default createStore({
       { name: "martinique", description: "Martinique Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", imgUrl: "https://image.freepik.com/free-photo/sailboat-medeteranian-sea_158595-6253.jpg" },
     ],
   },
+  getters: {
+    currentUser(state) {
+      return state.user;
+    }
+  },
   mutations: {
+    SET_USER(state, user) {
+      state.user = user
+    }
   },
   actions: {
+    setUser({ commit }, user) {
+      commit("SET_USER", user)
+    }
   },
   modules: {
   }
