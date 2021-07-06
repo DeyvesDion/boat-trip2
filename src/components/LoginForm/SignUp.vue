@@ -116,7 +116,7 @@ export default {
                     .then(() => {
                         this.$router.push({
                             name: "Dashboard",
-                            // params: { dB: dashboard },
+                            // params: { fD: destinationName },
                         });
                         console.log(this.user);
                     })
@@ -130,6 +130,9 @@ export default {
                 firebase
                     .auth()
                     .createUserWithEmailAndPassword(
+                        // this.user.name,
+                        // this.user.lastName,
+
                         this.user.email,
                         this.user.password
                     )
@@ -142,7 +145,7 @@ export default {
                             .then(() => {
                                 this.$router.push({
                                     name: "Dashboard",
-                                    // params: { dB: dashboard },
+                                    // params: { fD: destinationName },
                                 });
                             });
                         console.log(this.user);

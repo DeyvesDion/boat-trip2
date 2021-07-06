@@ -1,8 +1,8 @@
 <template>
     <div>
-        <h3 class="mt-5 mb-5 destination__title">
+        <h2 class="mt-5 mb-5 destination__title">
             Destination favorite
-        </h3>
+        </h2>
         <div class="destination__cardWrap row container-fluid">
             <div
                 class=" cardWrap col-sm-6 col-md-4 col-lg-4 col-xl-3"
