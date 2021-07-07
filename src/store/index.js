@@ -12,7 +12,7 @@ export default createStore({
     ],
     boats: [
       {
-        name: "voilier",
+        name: "Quicksilver 50CV",
         prix: 150,
         type: "voilier",
         port: "marseille",
@@ -23,17 +23,17 @@ export default createStore({
 
 
       {
-        name: "bateau a moteur",
+        name: "Bateau Open 115cv",
         prix: 360,
         type: "bateau à moteur",
-        port: "marseille",
+        port: "cannes",
         description:
           "La location de bateau à moteur entre particuliers et à un professionnel n’a jamais été aussi simple.",
         imgUrl: "https://images.unsplash.com/photo-1538422497454-081f9b0edf0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80",
 
       },
       {
-        name: "catamaran",
+        name: "New Nuova Jolly 630 2021",
         prix: 180,
         type: "catamaran",
         port: "marseille",
@@ -43,7 +43,7 @@ export default createStore({
 
       },
       {
-        name: "semi-rigide",
+        name: "Capelli Tempest 570 115cvx",
         prix: 250,
         type: "semi-rigide",
         port: "marseille",
