@@ -42,7 +42,7 @@ const routes = [
   },
   {
     //  bT: boat Type
-    path: '/location/:fD/:bT',
+    path: '/location-bateau/:fD/:bT',
     name: 'BookingBoat',
     component: BookingBoat
   },
