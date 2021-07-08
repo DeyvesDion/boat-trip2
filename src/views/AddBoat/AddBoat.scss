@@ -1,3 +1,26 @@
+.add__boat{
+    border: 1px solid rgba(128, 128, 128, 0.712);
+    background-color: rgba(150, 148, 148, 0.055);
+    
+}
+.right{
+    height: 400px;
+    padding: 57px 10px;
+    text-align: left;
+}
+.item {
+    padding: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.fa-check{
+    color:#7552EB;
+    margin-right: 5px;
+       
+}
+.right__title{
+    font-size: 18px;
+}
 .separator{
     // width: 97%;
     margin: 0 auto;
@@ -16,7 +39,8 @@
     border: 1px dashed;
     border-radius: 6px;
     font-size: 1em;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
 }
 .dropfile::before {
     display: block;
