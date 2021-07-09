@@ -1,7 +1,7 @@
 <template>
-    <div class="container my-5">
-        <div class="ok row">
-            <div class="add__boat left col-md-8">
+    <div class=" container-fluid my-5">
+        <div class="add__boat__container mx-5">
+            <div class="add__boat left">
                 <div class="add__boat__form">
                     <h2 class="add__boat__info my-5">
                         Informations personnelles
@@ -168,7 +168,7 @@
                     </form>
                 </div>
             </div>
-            <div class="add__boat right col-md-3 mx-4">
+            <div class="add__boat right">
                 <h3 class="right__title">
                     Boat Trip vous permet de gagner de l'argent en louant votre
                     bateau
