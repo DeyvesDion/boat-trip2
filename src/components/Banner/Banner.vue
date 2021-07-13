@@ -1,10 +1,10 @@
 <template>
     <div class="banner">
         <div class="inner__banner row container">
-            <h1 class="banner__title col-md-8">
+            <h1 class="banner__title col-md-7">
                 Location de bateau entre particulier
             </h1>
-            <SearchForm class="col-md-4" />
+            <SearchForm class="col-md-5" />
         </div>
     </div>
 </template>
